@@ -1,0 +1,16 @@
+<ion-item button="true" (click)="onVerDetalle()">
+  
+  <ion-thumbnail slot="start">
+    <ion-img [src]="aviso.imagen ? aviso.imagen : 'https://ionicframework.com/docs/img/demos/thumbnail.svg'" ></ion-img>
+  </ion-thumbnail>
+  
+  <ion-label>
+    <h2>{{ aviso.titulo }}</h2>
+    <p>{{ aviso.fecha | date:'dd/MM/yyyy' }}</p>
+  </ion-label>
+
+  <ion-button slot="end" fill="clear" color="danger" (click)="onEliminar($event)">
+    <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+  </ion-button>
+
+</ion-item>

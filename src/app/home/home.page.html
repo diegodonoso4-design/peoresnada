@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Publicaciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <ion-list>
+    <app-aviso-item 
+      *ngFor="let a of avisos" 
+      [aviso]="a" 
+      (click)="verDetalle(a)" 
+      (eliminar)="confirmarBorrado($event)">
+    </app-aviso-item>
+  </ion-list>
+
+  <div *ngIf="avisos.length === 0" class="ion-text-center ion-padding">
+    <p>No hay publicaciones registradas.</p>
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/publicacion">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
